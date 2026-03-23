@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>System - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="logo" style="color: #2c3e50; margin-bottom: 20px;">SYSTEM <span>MONITOR</span></div>
+        <h2>Acesso Restrito</h2>
+        
+        <input type="email" id="login-email" placeholder="email@email.com.br">
+        <input type="password" id="login-senha" placeholder="Senha">
+        
+        <button type="button" class="btn-save" onclick="realizarLogin()">Entrar no Painel</button>
+        
+        <div style="margin-top: 20px; font-size: 0.9rem;">
+            Não tem conta? <a href="cadastro.html" style="color: #2c3e50; font-weight: bold;">Cadastre-se aqui</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,620 @@
+/* ==========================================
+
+   VARIÁVEIS E BASE
+
+   ========================================== */
+
+:root {
+
+    --primary: #2c3e50;
+
+    --success: #2ecc71;
+
+    --danger: #e74c3c;
+
+    --warning: #f1c40f;
+
+    --bg: #f4f7f6;
+
+    --white: #ffffff;
+
+}
+
+
+
+body {
+
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    background: var(--bg);
+
+    margin: 0;
+
+    color: #333;
+
+}
+
+
+
+/* ==========================================
+
+   HEADER (CORRIGIDO PARA CENTRALIZAÇÃO)
+
+   ========================================== */
+
+header {
+
+    display: flex;
+
+    justify-content: space-between; /* Divide o espaço entre Logo, Busca e Botões */
+
+    align-items: center;
+
+    padding: 10px 30px;
+
+    background-color: var(--primary);
+
+    color: white;
+
+    height: 60px; /* Altura fixa para manter o alinhamento vertical */
+
+}
+
+
+
+/* Coluna 1: Logo */
+
+.logo {
+
+    flex: 1;
+
+    font-weight: bold;
+
+    font-size: 1.3rem;
+
+    letter-spacing: 1px;
+
+}
+
+.logo span { color: var(--success); }
+
+
+
+/* Coluna 2: Busca (Centro) */
+
+#busca-servidor {
+
+    flex: 2;
+
+    max-width: 450px; /* Largura ideal para não esticar demais */
+
+    margin: 0 20px;
+
+    padding: 10px 15px;
+
+    border-radius: 5px;
+
+    border: 1px solid #ccc;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+}
+
+
+
+/* Coluna 3: Botões (Direita) */
+
+.header-buttons {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: flex-end; /* Empurra os botões para o canto direito */
+
+    gap: 12px;
+
+}
+
+
+
+/* ==========================================
+
+   LAYOUT E DASHBOARD
+
+   ========================================== */
+
+main {
+
+    padding: 30px;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
+
+
+.status-header {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 30px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+
+.status-header div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+
+#bem-vindo { margin: 0; font-size: 1.5rem; color: var(--primary); }
+
+#user-email { font-weight: 600; font-size: 0.85rem; color: #7f8c8d; }
+
+
+
+/* ==========================================
+
+   CARDS DE SERVIDORES
+
+   ========================================== */
+
+.server-card {
+
+    background: var(--white);
+
+    border-radius: 8px;
+
+    padding: 20px 30px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+
+    border-left: 8px solid #bdc3c7;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    cursor: pointer;
+
+}
+
+
+
+.server-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+
+}
+
+
+
+.server-card.online { border-left-color: var(--success); }
+
+.server-card.offline {
+
+    border-left-color: var(--danger);
+
+    border: 2px solid var(--danger);
+
+    animation: pulse-red 2s infinite;
+
+}
+
+
+
+.server-card.warning-vms {
+
+    border-left: 10px solid var(--warning) !important;
+
+    background-color: #fffdf2;
+
+}
+
+
+
+/* Elementos Internos do Card */
+
+.info { flex: 2; text-align: left; }
+
+.info strong { font-size: 1.2rem; color: var(--primary); display: block; margin-bottom: 4px; }
+
+.info small { color: #95a5a6; font-family: 'Courier New', monospace; font-size: 0.95rem; }
+
+
+
+.status-badge { flex: 1; display: flex; justify-content: center; }
+
+.status-badge span {
+
+    font-weight: bold;
+
+    padding: 6px 16px;
+
+    border-radius: 20px;
+
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+
+    min-width: 80px;
+
+    text-align: center;
+
+}
+
+
+
+.online span { color: var(--success); background: #e8f8f0; border: 1px solid #d1f2eb; }
+
+.offline span { color: var(--danger); background: #fdeaea; border: 1px solid #fadbd8; }
+
+
+
+.btn-group { flex: 1; display: flex; justify-content: flex-end; gap: 8px; }
+
+
+
+/* ==========================================
+
+   BOTÕES
+
+   ========================================== */
+
+button {
+
+    cursor: pointer;
+
+    border: none;
+
+    border-radius: 6px;
+
+    padding: 10px 18px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+
+    font-size: 0.9rem;
+
+}
+
+
+
+.btn-add { background: var(--success); color: white; }
+
+.btn-add:hover { background: #27ae60; }
+
+
+
+.btn-logout { background: transparent; border: 1.5px solid white; color: white; }
+
+.btn-logout:hover { background: rgba(255,255,255,0.15); }
+
+
+
+.btn-edit { background-color: #3498db; color: white; padding: 6px 12px; font-size: 0.8em; }
+
+.btn-edit:hover { background-color: #2980b9; }
+
+
+
+.btn-delete { background: #fdfdfd; color: var(--danger); border: 1px solid #fadbd8; padding: 6px 12px; font-size: 0.8em; }
+
+.btn-delete:hover { background: var(--danger); color: white; }
+
+
+
+/* ==========================================
+
+   PAINEL DE LOGS (HISTÓRICO)
+
+   ========================================== */
+
+#painel-logs {
+
+    margin-top: 40px;
+
+    padding: 20px;
+
+    background: var(--white);
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+    border-top: 4px solid var(--danger);
+
+}
+
+
+
+#lista-logs {
+
+    list-style: none;
+
+    padding: 0;
+
+    max-height: 300px;
+
+    overflow-y: auto;
+
+}
+
+
+
+/* ==========================================
+
+   ANIMAÇÕES E LOADER
+
+   ========================================== */
+
+@keyframes pulse-red {
+
+    0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+
+    70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+
+    100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+
+}
+
+
+
+.loader {
+
+    width: 48px; height: 48px;
+
+    border: 5px solid #eee;
+
+    border-bottom-color: var(--primary);
+
+    border-radius: 50%;
+
+    display: none;
+
+    animation: rotation 1s linear infinite;
+
+    margin: 40px auto;
+
+}
+
+
+
+@keyframes rotation {
+
+    0% { transform: rotate(0deg); }
+
+    100% { transform: rotate(360deg); }
+
+}
+
+
+
+.btn-log {
+
+    background-color: #95a5a6;
+
+    color: white;
+
+    padding: 6px 12px;
+
+    font-size: 0.8em;
+
+    border: none;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+}
+
+
+
+.btn-log:hover {
+
+    background-color: #7f8c8d;
+
+}
+
+
+
+.btn-log-sm {
+
+    background: #ecf0f1;
+
+    border: 1px solid #bdc3c7;
+
+    border-radius: 4px;
+
+    padding: 2px 6px;
+
+    cursor: pointer;
+
+    font-size: 0.75rem;
+
+    transition: 0.2s;
+
+}
+
+
+
+.btn-log-sm:hover {
+
+    background: #dcdde1;
+
+    transform: scale(1.1);
+
+}
+
+/* ==========================================
+   RESTAURAÇÃO APENAS DO LOGIN E CADASTRO
+   (Cole isso no final do seu style.css antigo)
+   ========================================== */
+
+/* Garante que a tela de login ocupe tudo e fique azul */
+.login-page { 
+    background: var(--primary) !important; 
+    display: flex !important; 
+    height: 100vh !important; 
+    align-items: center !important; 
+    justify-content: center !important; 
+    margin: 0 !important;
+}
+
+/* O card branco onde ficam os inputs */
+.login-container { 
+    background: white !important; 
+    padding: 40px !important; 
+    border-radius: 12px !important; 
+    text-align: center !important; 
+    width: 350px !important; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important; 
+}
+
+.login-container h2 { 
+    margin-top: 0 !important; 
+    color: var(--primary) !important; 
+    font-size: 1.5rem !important;
+}
+
+/* Estiliza os inputs especificamente para não quebrar outros campos */
+.login-container input { 
+    width: 100% !important; 
+    padding: 12px !important; 
+    margin: 10px 0 20px 0 !important; 
+    border: 1px solid #ddd !important; 
+    border-radius: 6px !important; 
+    box-sizing: border-box !important; 
+    font-size: 1rem !important; 
+    display: block !important;
+}
+
+/* O botão verde de entrar */
+.btn-save { 
+    background: var(--success) !important; 
+    color: white !important; 
+    width: 100% !important; 
+    padding: 14px !important; 
+    font-size: 1rem !important; 
+    margin-bottom: 10px !important;
+    border: none !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: bold !important;
+}
+
+.btn-save:hover {
+    background: #27ae60 !important;
+}
+
+/* ==========================================
+   ESTILIZAÇÃO DA PÁGINA ADICIONAR.HTML
+   (Restaurando o CSS do Formulário)
+   ========================================== */
+
+/* Envelopa o formulário de cadastro para ele não ficar solto na página */
+#container-adicionar {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* O título "Novo Monitoramento" */
+#container-adicionar h2 {
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Agrupa cada campo (Label + Input) para não ficarem grudados */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Coloca o label em cima e o input embaixo */
+    gap: 8px; /* Pequeno espaço entre o label e o input */
+}
+
+/* Os textos que explicam o campo (Nome, IP, Porta, Host) */
+.form-group label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Os campos de input e o select especificamente para esta página */
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Essencial para o preenchimento não quebrar o layout */
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Efeito de foco quando o usuário clica no campo */
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 5px rgba(44, 62, 80, 0.15);
+}
+
+/* Pequeno texto de ajuda (ex: "* Selecione um Host apenas...") */
+.help-text {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: -10px; /* Gruda no input acima */
+    margin-bottom: 20px;
+}
+
+/* Agrupa os botões Salvar e Cancelar no final */
+.form-actions {
+    display: flex;
+    justify-content: flex-end; /* Empurra os botões para a direita */
+    gap: 15px;
+    margin-top: 30px;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>System - Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <h2>Novo Usuário</h2>
+        <p><small>Apenas domínio @systemup.inf.br</small></p>
+        <input type="text" id="cad-nome" placeholder="Seu Nome">
+        <input type="email" id="cad-email" placeholder="seu-email@systemup.inf.br">
+        <input type="password" id="cad-senha" placeholder="Sua Senha">
+        <button type="button" class="btn-save" onclick="realizarCadastro()">Criar Conta</button>
+        <button class="btn-logout" style="color: #666; border-color: #ccc;" onclick="window.location.href='login.html'">Voltar</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+</html>

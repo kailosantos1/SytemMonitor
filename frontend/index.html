@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>System - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">
+        SYSTEM <span>MONITOR</span>
+    </div>
+
+    <input type="text" id="busca-servidor" placeholder="🔍 Buscar por nome ou IP..." onkeyup="filtrarServidores()">
+
+    <div class="header-buttons">
+        <button class="btn-add" onclick="window.location.href='adicionar.html'">+ Novo Servidor</button>
+        <button class="btn-logout" onclick="sair()">Sair</button>
+    </div>
+</header>
+
+    <main>
+        <div class="status-header">
+            <div>
+                <h3 id="bem-vindo">Painel de Monitoramento</h3>
+                <small id="user-email"></small>
+            </div>
+        </div> 
+
+        <div id="meu-loader" class="loader"></div>
+        
+        <div id="container-servidores"></div>
+
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+</html>

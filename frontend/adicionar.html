@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>System - Adicionar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SYSTEM <span>CADASTRO</span></div>
+        <button class="btn-logout" onclick="window.location.href='index.html'">Voltar</button>
+    </header>
+
+    <main>
+        <div id="container-adicionar">
+            <h2>Novo Monitoramento</h2>
+            
+            <form onsubmit="salvarNoJava(event)">
+                <div class="form-group">
+                    <label for="nome">Nome do Cliente/Servidor:</label>
+                    <input type="text" id="nome" placeholder="Ex: ESXi Compasi ou VM-AD">
+                </div>
+
+                <div class="form-group">
+                    <label for="ip">Endereço IP (Externo ou Local):</label>
+                    <input type="text" id="ip" placeholder="Ex: 200.150.x.x ou 192.168.x.x">
+                </div>
+
+                <div class="form-group">
+                    <label for="porta">Porta de Monitoramento:</label>
+                    <input type="number" id="porta" value="80">
+                </div>
+
+                <div class="form-group">
+                    <label for="paiId">Vincular a um Host (Opcional):</label>
+                    <select id="paiId">
+                        <option value="">Nenhum (Este é um Servidor Físico/Host)</option>
+                    </select>
+                </div>
+                
+                <p class="help-text">
+                    * Selecione um Host apenas se estiver cadastrando uma VM.
+                </p>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-delete" onclick="window.location.href='index.html'">Cancelar</button>
+                    <button type="submit" class="btn-save">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof carregarHostsNoSelect === "function") {
+                carregarHostsNoSelect();
+            }
+        });
+    </script>
+</body>
+</html>
