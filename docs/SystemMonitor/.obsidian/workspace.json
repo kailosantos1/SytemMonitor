@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "f7f1052585f6b815",
+        "id": "4db9bf04d0f68a9a",
         "type": "tabs",
         "children": [
           {
-            "id": "f7bd32bec616c5d6",
+            "id": "78b72b770632007e",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Visualização em gráfico"
+              "icon": "lucide-file",
+              "title": "Nova aba"
             }
           }
         ]
@@ -181,6 +181,30 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "f7bd32bec616c5d6",
-  "lastOpenFiles": []
+  "active": "78b72b770632007e",
+  "lastOpenFiles": [
+    "08 - Pendencias/Pontos a confirmar.md",
+    "08 - Pendencias/Indice.md",
+    "07 - Operacao/Indice.md",
+    "07 - Operacao/Comportamento em execucao.md",
+    "06 - Desenvolvimento/Testes e build.md",
+    "06 - Desenvolvimento/Indice.md",
+    "06 - Desenvolvimento/Configuracao e execucao.md",
+    "05 - Interfaces e Integracoes/Integracoes externas.md",
+    "05 - Interfaces e Integracoes/Indice.md",
+    "05 - Interfaces e Integracoes/API REST.md",
+    "04 - Dados/Modelo de dados.md",
+    "04 - Dados/Indice.md",
+    "03 - Fluxos/Monitoramento.md",
+    "03 - Fluxos/Indice.md",
+    "03 - Fluxos/Cadastro e login.md",
+    "03 - Fluxos/Cadastro de ativo.md",
+    "02 - Modulos/Seguranca.md",
+    "02 - Modulos/Indice.md",
+    "02 - Modulos/Frontend.md",
+    "02 - Modulos/Backend API.md",
+    "01 - Arquitetura/Visao geral.md",
+    "01 - Arquitetura/Indice.md",
+    "00 - Inicio/Inicio.md"
+  ]
 }

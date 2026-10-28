@@ -1,0 +1,10 @@
+com/systemup/monitor/Log.class
+com/systemup/monitor/UsuarioRepository.class
+com/systemup/monitor/Usuario.class
+com/systemup/monitor/LogRepository.class
+com/systemup/monitor/MonitorApplication.class
+com/systemup/monitor/ServidorController.class
+com/systemup/monitor/ServidorRepository.class
+com/systemup/monitor/Servidor.class
+com/systemup/monitor/UsuarioController.class
+com/systemup/monitor/SecurityConfig.class

@@ -36,7 +36,7 @@ O driver MySQL está no `pom.xml` e há configurações ativas de datasource/JPA
 | Modelo/persistência | Entidades JPA e interfaces `JpaRepository` | [`Servidor.java`](../../../src/main/java/com/systemup/monitor/Servidor.java), [`Usuario.java`](../../../src/main/java/com/systemup/monitor/Usuario.java), [`Log.java`](../../../src/main/java/com/systemup/monitor/Log.java) |
 | Interface | Dashboard, cadastro de ativos, cadastro/login e estilos | [`frontend/`](../../../frontend), [`script.js`](../../../frontend/script.js), [`style.css`](../../../frontend/style.css) |
 
-O manifesto declara Java 21, Spring Boot 4.0.3, Spring MVC, Spring Data JPA, MySQL Connector/J, Lombok e Spring Security; os starters de teste estão no escopo de teste. Consulte [`pom.xml`](../../../pom.xml).
+O manifesto declara Java 25, Spring Boot 4.0.3, Spring MVC, Spring Data JPA, MySQL Connector/J, Lombok e Spring Security; os starters de teste estão no escopo de teste. Consulte [`pom.xml`](../../../pom.xml).
 
 ## Limites da arquitetura observada
 

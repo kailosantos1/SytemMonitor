@@ -2,9 +2,9 @@
 
 ## Tecnologias declaradas
 
-[`pom.xml`](../../../pom.xml) declara Java 21 e Spring Boot 4.0.3. As dependências incluem Spring MVC, Spring Data JPA, MySQL Connector/J (runtime), Lombok (opcional), Spring Security e starters de teste para JPA e MVC.
+[`pom.xml`](../../../pom.xml) declara Java 25 e Spring Boot 4.0.3. As dependências incluem Spring MVC, Spring Data JPA, MySQL Connector/J (runtime), Lombok (opcional), Spring Security e starters de teste para JPA e MVC.
 
-O repositório tem `mvnw` e `mvnw.cmd`, mas **não contém** `.mvn/wrapper/maven-wrapper.properties`; no ambiente desta análise, `mvnw` também não tinha permissão de execução. Maven não estava instalado. Portanto, os comandos Maven padrão abaixo são identificados pelo manifesto, não foram executados com sucesso neste checkout.
+O repositório contém `mvnw` e `mvnw.cmd`; `.mvn/wrapper/maven-wrapper.properties` fixa Maven 3.9.16. O script `mvnw` não tem permissão de execução neste checkout, então use `bash mvnw ...` no Linux. Não é necessário instalar Maven manualmente: o wrapper baixa a distribuição configurada.
 
 ## Configuração da aplicação
 
@@ -17,16 +17,16 @@ O repositório tem `mvnw` e `mvnw.cmd`, mas **não contém** `.mvn/wrapper/maven
 
 O README sugere Live Server para servir os arquivos estáticos, mas essa orientação não foi testada. Não há instrução de deploy versionada.
 
-## Comandos identificados, não validados neste ambiente
+## Comandos Maven
 
-Com Maven instalado e configuração de datasource pronta, o projeto Maven oferece os alvos padrão:
+Com o wrapper e uma configuração de datasource pronta, os alvos padrão são:
 
 ```bash
-mvn spring-boot:run
-mvn test
-mvn clean package
+bash mvnw spring-boot:run
+bash mvnw test
+bash mvnw clean package
 ```
 
-Não executar sem primeiro configurar o banco. O comando de wrapper `./mvnw test` falhou por falta de permissão; `bash mvnw test` falhou por falta do arquivo de propriedades do wrapper; `mvn test` falhou porque Maven não estava instalado. Esses resultados não confirmam nem refutam a compilação/testes do código.
+Configure o banco antes de executar a aplicação ou os testes de contexto. O wrapper baixa a versão Maven definida no arquivo de propriedades.
 
 Voltar para [[06 - Desenvolvimento/Indice|índice de desenvolvimento]].

@@ -19,7 +19,7 @@ Esta nota registra lacunas encontradas na análise do repositório; não presume
 - O README descreve o backend como responsável por pings; o código examinado faz teste de conexão TCP por socket em IP/porta quando a lista é consultada. Não foi encontrado ping ICMP.
 - O README cita instalação/uso do Live Server e funcionamento na porta 8080, mas não foi possível iniciar aplicação ou frontend neste ambiente.
 - A configuração padrão efetiva do Hibernate, banco/schema e estratégia segura de provisionamento não foi validada em execução.
-- O wrapper Maven está incompleto no checkout analisado e Maven não está instalado no ambiente; veja [[06 - Desenvolvimento/Testes e build|validação de testes/build]].
+- O wrapper Maven está configurado para Maven 3.9.16, mas o script `mvnw` não tem permissão de execução no checkout; use `bash mvnw`. Os testes de contexto dependem de MySQL disponível em `localhost:3306`; veja [[06 - Desenvolvimento/Testes e build|validação de testes/build]].
 
 ## Fora do que foi possível confirmar
 

@@ -6,16 +6,13 @@ O único teste de aplicação identificado é [`MonitorApplicationTests.java`](.
 
 O `pom.xml` configura o plugin do Spring Boot e inclui starters de teste para MVC e JPA. O build é Maven.
 
-## Validação executada durante a documentação
-
-Foi tentado executar a suíte de três formas:
+## Validação executada com Java 25
 
 | Comando | Resultado observado |
 |---|---|
-| `./mvnw test` | Não executou: arquivo `mvnw` sem permissão de execução. |
-| `bash mvnw test` | Não executou: `.mvn/wrapper/maven-wrapper.properties` inexistente. |
-| `mvn test` | Não executou: comando `mvn` não está instalado no ambiente. |
+| `JAVA_HOME=<JDK 25> bash mvnw clean test-compile -q` | Sucesso: código principal e testes compilados. |
+| `JAVA_HOME=<JDK 25> bash mvnw clean test -q` | Falha: 1 teste, 0 falhas de asserção, 1 erro ao conectar em `localhost:3306` durante a inicialização do contexto Spring. |
 
-Assim, não há resultado de teste ou build aprovado a reportar. Para executar, instale/ disponibilize Maven ou complete a configuração do wrapper, forneça as configurações de banco requeridas e rode `mvn test`. Comandos identificados, ainda não validados: [[06 - Desenvolvimento/Configuracao e execucao|configuração e comandos]].
+O teste `contextLoads()` requer a conexão MySQL configurada em `application.properties`. Para validar a suíte, disponibilize o banco e suas credenciais no ambiente e rode `bash mvnw clean test`. O teste não atestou integração de persistência porque a conexão não estava disponível.
 
 Voltar para [[06 - Desenvolvimento/Indice|índice de desenvolvimento]].
